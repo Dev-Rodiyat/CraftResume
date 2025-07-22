@@ -31,19 +31,19 @@ export default function Home() {
                 viewport={{ once: true }}
             >
                 <FeatureCard
-                    icon={<FaFileAlt size={32} className="text-blue-600" />}
-                    title="Customizable Layouts"
-                    description="Choose from multiple elegant resume templates designed for professionals."
+                    icon={<FaMagic size={32} className="text-blue-600" />}
+                    title="Smart Builder"
+                    description="Automatically suggests relevant sections based on your industry and experience."
                 />
                 <FeatureCard
-                    icon={<FaMagic size={32} className="text-blue-600" />}
-                    title="Effortless Editing"
-                    description="Drag-and-drop sections, smart suggestions, and intuitive controls."
+                    icon={<FaFileAlt size={32} className="text-blue-600" />}
+                    title="Real-Time Save"
+                    description="Instantly save and view how your resume looks like. No guesswork."
                 />
                 <FeatureCard
                     icon={<FaDownload size={32} className="text-blue-600" />}
                     title="Download in PDF"
-                    description="Export your finished resume in high-quality PDF format instantly."
+                    description="Export your polished resume as a print-ready PDF in seconds."
                 />
             </motion.div>
 
@@ -61,18 +61,18 @@ export default function Home() {
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
                     <StepCard
                         number="1"
-                        title="Choose Template"
-                        description="Pick a sleek, modern template for your resume. Designed for professionalism."
+                        title="Start from Scratch"
+                        description="Begin with a clean, distraction-free builder. Just add your info, and we’ll handle the layout."
                     />
                     <StepCard
                         number="2"
-                        title="Add Your Details"
-                        description="Enter your experience, education, skills and more with our easy-to-use editor."
+                        title="Fill Out Sections"
+                        description="Enter your experience, education, projects, and more using intuitive forms."
                     />
                     <StepCard
                         number="3"
-                        title="Download Instantly"
-                        description="Preview and download your resume as a high-quality PDF with one click."
+                        title="Save and download Instantly"
+                        description="Save, download and export your professional resume as a high-quality PDF with one click."
                     />
                 </div>
             </motion.div>

@@ -84,8 +84,8 @@ export default function About() {
                     <h2 className="text-xl font-semibold text-blue-600 mb-2">What You Get</h2>
                     <ul className="list-disc ml-6 space-y-2">
                         <li>Live builder to create and preview your resume instantly</li>
-                        <li>Multiple clean, elegant templates to choose from</li>
-                        <li>Downloadable PDF export</li>
+                        <li>Multiple sections to create</li>
+                        <li>Downloadable and print support</li>
                         <li>No signup needed to get started</li>
                     </ul>
                 </div>
@@ -98,7 +98,7 @@ export default function About() {
                 >
                     <h2 className="text-xl font-semibold text-blue-600 mb-2">Made for Everyone</h2>
                     <p>
-                        Whether you're a student, a developer, a designer, or a career switcher —
+                        Whether you're a student, a developer, a designer, or a career switcher -
                         CraftResume helps you stand out with a polished resume that reflects your
                         professionalism and personality.
                     </p>
