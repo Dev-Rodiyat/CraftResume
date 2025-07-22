@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function ResumeList() {
+export default function ResumeList({ searchQuery }) {
     const [resumes, setResumes] = useState([]);
 
     useEffect(() => {
@@ -12,7 +12,7 @@ export default function ResumeList() {
     const handleDelete = (id) => {
         const updated = resumes.filter((res) => res.id !== id);
         setResumes(updated);
-        window.confirm(localStorage.setItem("resumes", JSON.stringify(updated)))
+        window.confirm(localStorage.setItem("resumes", JSON.stringify(updated)));
     };
 
     const handleDownload = (resume) => {
@@ -26,11 +26,20 @@ export default function ResumeList() {
         document.body.removeChild(link);
     };
 
-    if (resumes.length === 0) {
+    const filteredResumes = resumes.filter((resume) => {
+        const query = searchQuery.toLowerCase();
+        const dateString = new Date(resume.date).toLocaleDateString().toLowerCase();
+        return (
+            resume.name?.toLowerCase().includes(query) ||
+            dateString.includes(query)
+        );
+    });
+
+    if (filteredResumes.length === 0) {
         return (
             <div className="text-center text-gray-500 py-16">
-                <p className="text-lg mb-2">No resumes yet.</p>
-                <p className="text-sm">Click below to craft your first one.</p>
+                <p className="text-lg mb-2">No resumes found.</p>
+                <p className="text-sm">Try searching or create a new one.</p>
                 <Link
                     to="/builder?type=resume"
                     className="inline-block mt-8 bg-blue-600 text-white font-medium px-5 py-2 rounded-full hover:bg-blue-700 transition"
@@ -43,7 +52,7 @@ export default function ResumeList() {
 
     return (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {resumes.map((resume) => (
+            {filteredResumes.map((resume) => (
                 <div
                     key={resume.id}
                     className="border rounded-xl p-5 shadow-sm hover:shadow-md transition"
